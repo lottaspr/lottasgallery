@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UX and UI Stuff as well as Posters</title>
+  <link rel="stylesheet" href="styles/design.css">
+</head>
+<body>
+
+  <header>
+    <a href="index.html">Back to Gallery</a>
+  </header>
+
+  <main class="artwork-page">
+
+    <div class="artwork-details">
+      <h1>Posters and Stuff</h1>
+
+      <p><strong>Year:</strong> 2025</p>
+      <p><strong>Medium:</strong> Mixed Media</p>
+
+      <p class="description">
+        bla bla bla
+      </p>
+    </div>
+
+  </main>
+
+</body>
+</html>
