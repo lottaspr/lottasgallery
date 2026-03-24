@@ -17,3 +17,4 @@ document.getElementById("prev").addEventListener("click", () => {
 });
 
 showSlide(current);
+
