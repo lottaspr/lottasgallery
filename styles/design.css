@@ -47,32 +47,43 @@
 }
 
 
+.hero {
+  position: relative;
+  width: 100%;
+  height: 100vh; /* voller Bildschirm */
+  overflow: hidden;
+}
+
+/* gemeinsame Einstellungen */
 .bush {
   position: absolute;
-  transition: transform 0.1s linear;
   object-fit: cover;
+  will-change: transform;
 }
 
-
+/* Linker Busch */
 .left {
+  top: 0;
   left: 0;
-  top: 0;
-  width: 50%; 
-  height: 100%;
+  width: 40%;    /* kleiner, nicht alles einnehmen */
+  height: 80%;   /* etwas unterhalb der Höhe */
+  z-index: 3;    /* oben, damit überlappt */
 }
 
-
+/* Rechter Busch */
 .right {
-  right: 0;
   top: 0;
-  width: 50%; 
-  height: 100%;
+  right: 0;
+  width: 40%;
+  height: 80%;
+  z-index: 3;
 }
 
-
+/* Oberer Busch */
 .top {
   top: 0;
   left: 0;
-  width: 100%; 
-  width: 50%;
+  width: 100%;
+  height: 50%;   /* deckt nur obere Hälfte */
+  z-index: 2;    /* hinter den linken/rechten Büsche */
 }
