@@ -54,6 +54,7 @@
 
 
 .left {
+  max-width: 50px
   left: 0;
   top: 0;
   height: 100%;
@@ -61,6 +62,7 @@
 
 
 .right {
+  max-width: 50px
   right: 0;
   top: 0;
   height: 100%;
@@ -68,6 +70,7 @@
 
 
 .top {
+  max-width: 50px
   top: 0;
   left: 0;
   width: 100%;
