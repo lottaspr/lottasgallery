@@ -38,3 +38,36 @@
   max-width: 50px;   
   height: auto; 
 }
+
+.hero {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+}
+
+
+.bush {
+  position: absolute;
+  transition: transform 0.1s linear;
+}
+
+
+.left {
+  left: 0;
+  top: 0;
+  height: 100%;
+}
+
+
+.right {
+  right: 0;
+  top: 0;
+  height: 100%;
+}
+
+
+.top {
+  top: 0;
+  left: 0;
+  width: 100%;
+}
