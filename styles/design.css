@@ -1,96 +1,153 @@
+/* ============================== */
+/* Basis                         */
+/* ============================== */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background-color: #ECF8ED;
+  color: #333;
+  overflow-x: hidden;
+}
+
+/* ============================== */
+/* Header                         */
+/* ============================== */
+
+header {
+  position: relative;
+  z-index: 2000; /* bleibt über allem */
+  text-align: center;
+  padding: 2rem;
+  background: white;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+header p {
+  color: #777;
+}
+
+/* ============================== */
+/* Hero + Büsche (über Galerie)   */
+/* ============================== */
+
 .hero {
   position: relative;
   height: 100vh;
   width: 100%;
-  overflow: hidden;
+  overflow: visible;
   z-index: 10;
 }
-* {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: Arial, sans-serif;
-    }
 
-    body {
-      background-color: #ECF8ED;
-      color: #333;
-    }
+/* Büsche sind über der Galerie, nicht über dem Header */
+.bush {
+  position: absolute;
+  object-fit: cover;
+  will-change: transform;
+  pointer-events: none; /* Galerie bleibt klickbar */
+  transition: transform 0.3s ease;
+  z-index: 100; /* liegt über der Galerie */
+}
 
-    header {
-      text-align: center;
-      padding: 2rem;
-      background: white;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-    }
+.bush.left {
+  top: 20%;
+  left: 0;
+  width: 45%;
+  height: 80%;
+}
 
-    header h1 {
-      font-size: 2.5rem;
-      margin-bottom: 0.5rem;
-    }
+.bush.right {
+  top: 20%;
+  right: 0;
+  width: 45%;
+  height: 80%;
+}
 
-    header p {
-      color: #777;
-    }
+.bush.top {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 50%;
+}
 
-    .gallery {
-      position: relative; 
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 1.5rem;
-      padding: 2rem;
-    }
+/* ============================== */
+/* Galerie                        */
+/* ============================== */
 
-    .art-card {
-      background: white;
-      border-radius: 12px;
-      overflow: hidden;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
-    }
+.gallery {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  padding: 2rem;
+  z-index: 1;
+}
 
-    .art-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 6px 18px rgba(0,0,0,0.12);
-    }
+.art-card {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  text-decoration: none;
+  color: inherit;
+}
 
-    .art-card img {
-      width: 100%;
-      height: 200px;
-      object-fit: cover;
-    }
+.art-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+}
 
-    .art-info {
-      padding: 1rem;
-    }
+.art-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
 
-    .art-info h3 {
-      margin-bottom: 0.5rem;
-      font-size: 1.2rem;
-    }
+.art-info {
+  padding: 1rem;
+}
 
-    .art-info p {
-      font-size: 0.9rem;
-      color: #666;
-    }
+.art-info h3 {
+  margin-bottom: 0.5rem;
+  font-size: 1.2rem;
+}
 
-    footer {
-      text-align: center;
-      padding: 1.5rem;
-      color: #999;
-      font-size: 0.9rem;
-    }
+.art-info p {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+/* ============================== */
+/* Footer                         */
+/* ============================== */
+
+footer {
+  text-align: center;
+  padding: 1.5rem;
+  color: #999;
+  font-size: 0.9rem;
+}
+
+/* ============================== */
+/* Artwork-Seiten (Slideshow usw.)*/
+/* ============================== */
 
 .artwork-page {
   max-width: 900px;
   margin: 2rem auto;
   padding: 1rem;
 }
-
-.fonts {
-      font-family: Arial, sans-serif;
-    }
-
 
 .artwork-image {
   width: 100%;
@@ -106,6 +163,7 @@
   margin-top: 1rem;
   line-height: 1.6;
 }
+
 .slideshow {
   position: relative;
   max-width: 700px;
@@ -117,61 +175,40 @@
   width: 100%;
 }
 
+.slide.active {
+  display: block;
+}
+
+/* ============================== */
+/* Buttons                        */
+/* ============================== */
+
+#prev,
+#next {
+  background-color: #333;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  margin: 0.5rem;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: background-color 0.2s ease;
+}
+
+#prev:hover,
+#next:hover {
+  background-color: #666;
+}
+
+/* Back-Button */
 .back-btn {
-  max-width: 50px;   
-  height: auto; 
-}
-
-.bush {
-  position: absolute;
-  object-fit: cover;    
-  will-change: transform;
-  z-index: 20;
-.hero {
-  position: relative;
-  z-index: 999; /* make sure it's above everything */
-}
-
-
-.left {
-  top: 20%;             
-.bush {
-  position: fixed; /* not absolute - so it stays on screen */
-  object-fit: cover;
-  width: 100%;
+  max-width: 50px;
   height: auto;
-  top: 0;
-  left: 0;
-  width: 45%;           
-  height: 80%;
-  z-index: 3;           
-  z-index: 1000;
-  pointer-events: none; /* lets users interact with gallery below */
-  transition: transform 0.3s ease; /* optional, for smoother motion */
+  cursor: pointer;
+  transition: transform 0.2s ease;
 }
 
-.bush.left {
-  width: 50%;
-  left: 0;
+.back-btn:hover {
+  transform: scale(1.05);
 }
 
-.right {
-  top: 20%;
-.bush.right {
-  width: 50%;
-  right: 0;
-  width: 45%;
-  height: 80%;
-  z-index: 3;
-}
-
-
-.top {
-.bush.top {
-  height: 50%;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 50%;          
-  z-index: 2;           
-}
