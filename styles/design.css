@@ -49,6 +49,7 @@
 .bush {
   position: absolute;
   transition: transform 0.1s linear;
+  object-fit: cover;
 }
 
 
