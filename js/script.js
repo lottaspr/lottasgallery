@@ -16,21 +16,3 @@ document.getElementById("prev").addEventListener("click", () => {
     showSlide(current);
 });
 
-showSlide(current);
-
-document.addEventListener("DOMContentLoaded", () => {
-  const left = document.querySelector(".left");
-  const right = document.querySelector(".right");
-  const topBush = document.querySelector(".top");
-
-  if (!left || !right || !topBush) return; // stop if images not found
-
-  window.addEventListener("scroll", () => {
-    const scrollY = Math.min(window.scrollY, 500); // limit movement
-
-    // Move bushes
-    left.style.transform = `translateX(${-scrollY * 20}px)`;
-    right.style.transform = `translateX(${scrollY * 20}px)`;
-    topBush.style.transform = `translateY(${-scrollY * 20}px)`;
-  });
-});
