@@ -50,31 +50,31 @@
 .hero {
   position: relative;
   width: 100%;
-  height: 100vh; /* voller Bildschirm */
-  overflow: hidden;
+  height: 100vh;       /* volle Bildschirmhöhe */
+  overflow: hidden;     /* alles, was rausläuft, wird verborgen */
 }
 
-/* gemeinsame Einstellungen */
+/* gemeinsame Regeln für alle Büsche */
 .bush {
   position: absolute;
-  object-fit: cover;
+  object-fit: cover;    /* füllt den Bereich, skaliert proportional */
   will-change: transform;
 }
 
 /* Linker Busch */
 .left {
-  top: 0;
+  top: 20%;             /* etwas von oben runter */
   left: 0;
-  width: 40%;    /* kleiner, nicht alles einnehmen */
-  height: 80%;   /* etwas unterhalb der Höhe */
-  z-index: 3;    /* oben, damit überlappt */
+  width: 45%;           /* kleiner als Hälfte für Überlappung */
+  height: 80%;
+  z-index: 3;           /* oben auf dem Stapel */
 }
 
 /* Rechter Busch */
 .right {
-  top: 0;
+  top: 20%;
   right: 0;
-  width: 40%;
+  width: 45%;
   height: 80%;
   z-index: 3;
 }
@@ -84,6 +84,6 @@
   top: 0;
   left: 0;
   width: 100%;
-  height: 50%;   /* deckt nur obere Hälfte */
-  z-index: 2;    /* hinter den linken/rechten Büsche */
+  height: 50%;          /* deckt obere Hälfte */
+  z-index: 2;           /* unter linker/rechter Busch, aber über Gallery */
 }
