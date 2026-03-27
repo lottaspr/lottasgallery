@@ -46,31 +46,22 @@
   overflow: hidden;
 }
 
-
-.hero {
-  position: relative;
-  width: 100%;
-  height: 100vh;       /* volle Bildschirmhöhe */
-  overflow: hidden;     /* alles, was rausläuft, wird verborgen */
-}
-
-/* gemeinsame Regeln für alle Büsche */
 .bush {
   position: absolute;
-  object-fit: cover;    /* füllt den Bereich, skaliert proportional */
+  object-fit: cover;    
   will-change: transform;
 }
 
 /* Linker Busch */
 .left {
-  top: 20%;             /* etwas von oben runter */
+  top: 20%;             
   left: 0;
-  width: 45%;           /* kleiner als Hälfte für Überlappung */
+  width: 45%;           
   height: 80%;
-  z-index: 3;           /* oben auf dem Stapel */
+  z-index: 3;           
 }
 
-/* Rechter Busch */
+
 .right {
   top: 20%;
   right: 0;
@@ -79,11 +70,11 @@
   z-index: 3;
 }
 
-/* Oberer Busch */
+
 .top {
   top: 0;
   left: 0;
   width: 100%;
-  height: 50%;          /* deckt obere Hälfte */
-  z-index: 2;           /* unter linker/rechter Busch, aber über Gallery */
+  height: 50%;          
+  z-index: 2;           
 }
