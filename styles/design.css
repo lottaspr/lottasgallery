@@ -32,4 +32,9 @@
 .slide {
   display: none;
   width: 100%;
- 
+}
+
+.back-btn {
+   width: 40px;   
+  height: auto; 
+}
