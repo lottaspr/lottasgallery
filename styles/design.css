@@ -27,6 +27,8 @@
     }
 
     .gallery {
+      position: relative; 
+      z-index: 1;
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
       gap: 1.5rem;
@@ -119,15 +121,17 @@
   height: 100vh;
   width: 100%;
   overflow: hidden;
+  z-index: 10;
 }
 
 .bush {
   position: absolute;
   object-fit: cover;    
   will-change: transform;
+  z-index: 20;
 }
 
-/* Linker Busch */
+
 .left {
   top: 20%;             
   left: 0;
