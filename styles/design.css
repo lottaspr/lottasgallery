@@ -122,36 +122,35 @@
   height: auto; 
 }
 
+.hero {
+  position: relative;
+  z-index: 999; /* make sure it's above everything */
+}
+
 .bush {
-  position: absolute;
-  object-fit: cover;    
-  will-change: transform;
-  z-index: 20;
-}
-
-
-.left {
-  top: 20%;             
-  left: 0;
-  width: 45%;           
-  height: 80%;
-  z-index: 3;           
-}
-
-
-.right {
-  top: 20%;
-  right: 0;
-  width: 45%;
-  height: 80%;
-  z-index: 3;
-}
-
-
-.top {
+  position: fixed; /* not absolute - so it stays on screen */
+  object-fit: cover;
+  width: 100%;
+  height: auto;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 50%;          
-  z-index: 2;           
+  z-index: 1000;
+  pointer-events: none; /* lets users interact with gallery below */
+  transition: transform 0.3s ease; /* optional, for smoother motion */
 }
+
+.bush.left {
+  width: 50%;
+  left: 0;
+}
+
+.bush.right {
+  width: 50%;
+  right: 0;
+}
+
+.bush.top {
+  height: 50%;
+  top: 0;
+}
+
