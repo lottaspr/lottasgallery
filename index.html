@@ -125,25 +125,12 @@
       </div>
     </div>
 
-  <script>
-  const left = document.querySelector(".left");
-  const right = document.querySelector(".right");
-  const topBush = document.querySelector(".top");
-
-  window.addEventListener("scroll", () => {
-    let scrollY = Math.min(window.scrollY, 500); // limit
-
-    left.style.transform = `translateX(${-scrollY * 0.5}px)`;
-    right.style.transform = `translateX(${scrollY * 0.5}px)`;
-    topBush.style.transform = `translateY(${-scrollY * 0.6}px)`;
-  });
-  </script>
-
+ 
   </main>
 
   <footer>
     © 2026 Lotta, Blockseminar 
   </footer>
-<script src="js/script.js"></script>
+<script src="js/scroll.js"></script>
 </body>
 </html>
