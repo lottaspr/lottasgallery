@@ -18,9 +18,6 @@ document.getElementById("prev").addEventListener("click", () => {
 
 showSlide(current);
 
-// scroll.js
-// Smooth reveal animation for bushes on landing page
-
 document.addEventListener("DOMContentLoaded", () => {
   const left = document.querySelector(".left");
   const right = document.querySelector(".right");
@@ -32,8 +29,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const scrollY = Math.min(window.scrollY, 500); // limit movement
 
     // Move bushes
-    left.style.transform = `translateX(${-scrollY * 0.5}px)`;
-    right.style.transform = `translateX(${scrollY * 0.5}px)`;
-    topBush.style.transform = `translateY(${-scrollY * 0.6}px)`;
+    left.style.transform = `translateX(${-scrollY * 20}px)`;
+    right.style.transform = `translateX(${scrollY * 20}px)`;
+    topBush.style.transform = `translateY(${-scrollY * 20}px)`;
   });
 });
